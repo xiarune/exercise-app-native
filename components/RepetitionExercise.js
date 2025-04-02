@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
+import { Button } from 'react-native-elements';
 
 export default function RepetitionExercise({ route, navigation }) {
   const { name, suggested } = route.params;
@@ -44,3 +45,4 @@ const styles = StyleSheet.create({
   counter: { fontSize: 18, marginBottom: 20 },
   buttonWrapper: { marginVertical: 5, width: '80%' },
 });
+

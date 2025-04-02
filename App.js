@@ -1,7 +1,8 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { View, Text, FlatList, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, FlatList, Text, StyleSheet } from 'react-native';
+import { Button } from 'react-native-elements';
 
 import RepetitionExercise from './components/RepetitionExercise';
 import DurationExercise from './components/DurationExercise';
@@ -34,21 +35,21 @@ export default function App() {
 
 function HomeScreen({ navigation }) {
   const renderItem = ({ item }) => (
-    <TouchableOpacity
-      style={styles.button}
-      onPress={() =>
-        navigation.navigate(
-          item.type === 'repetition'
-            ? 'RepetitionExercise'
-            : item.type === 'duration'
-            ? 'DurationExercise'
-            : 'RunningExercise',
-          { name: item.name, suggested: item.suggested }
-        )
-      }
-    >
-      <Text style={styles.buttonText}>{item.name}</Text>
-    </TouchableOpacity>
+    <View style={styles.buttonWrapper}>
+      <Button
+        title={item.name}
+        onPress={() =>
+          navigation.navigate(
+            item.type === 'repetition'
+              ? 'RepetitionExercise'
+              : item.type === 'duration'
+              ? 'DurationExercise'
+              : 'RunningExercise',
+            { name: item.name, suggested: item.suggested }
+          )
+        }
+      />
+    </View>
   );
 
   return (
@@ -66,12 +67,7 @@ function HomeScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: { flex: 1, padding: 20 },
   header: { fontSize: 24, fontWeight: 'bold', marginBottom: 20 },
-  button: {
-    backgroundColor: '#007bff',
-    padding: 15,
-    borderRadius: 8,
-    marginBottom: 10,
-  },
-  buttonText: { color: 'white', fontSize: 18, textAlign: 'center' },
+  buttonWrapper: { marginBottom: 10 },
 });
+
 

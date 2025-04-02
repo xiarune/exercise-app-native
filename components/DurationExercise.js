@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
+import { Button } from 'react-native-elements';
 
 export default function DurationExercise({ route, navigation }) {
   const { name, suggested } = route.params;
@@ -56,4 +57,5 @@ const styles = StyleSheet.create({
   timer: { fontSize: 18, marginBottom: 20 },
   buttonWrapper: { marginVertical: 5, width: '80%' },
 });
+
 

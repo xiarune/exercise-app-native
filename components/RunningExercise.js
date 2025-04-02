@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, Button, ScrollView, StyleSheet } from 'react-native';
+import { View, Text, ScrollView, StyleSheet } from 'react-native';
+import { Button } from 'react-native-elements';
 
 export default function RunningExercise({ route, navigation }) {
   const { name, suggested } = route.params;
@@ -78,4 +79,5 @@ const styles = StyleSheet.create({
   lapTitle: { fontSize: 18, fontWeight: 'bold', marginTop: 20, marginBottom: 10 },
   lapText: { fontSize: 16 },
 });
+
 
